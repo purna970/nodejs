@@ -1,0 +1,6 @@
+---
+- name: nodejs
+  hosts: all 
+  become: yes 
+  roles: 
+    - nodejsroles
