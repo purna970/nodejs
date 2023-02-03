@@ -4,16 +4,16 @@
   ansible.builtin.apt:
     update_cache: yes
   when: ansible_facts['distribution'] == "Ubuntu" 
-- name: epel-release
+- name: install epel-release
   ansible.builtin.yum:
-    name: install epel-release
+    name: epel-release
     state: present    
   when: ansible_facts['distribution'] == "CentOS"   
-- name: nodejs
+- name: install nodejs
   ansible.builtin.package:
-    name: install nodejs
+    name: nodejs
     state: present    
-- name: npm
+- name: install npm
   ansible.builtin.package:
-    name: install npm
+    name: npm
     state: present      
