@@ -1,0 +1,19 @@
+---
+# tasks file for java
+- name: apt update
+  ansible.builtin.apt:
+    update_cache: yes
+  when: ansible_facts['distribution'] == "Ubuntu" 
+- name: epel-release
+  ansible.builtin.yum:
+    name: install epel-release
+    state: present    
+  when: ansible_facts['distribution'] == "CentOS"   
+- name: nodejs
+  ansible.builtin.package:
+    name: install nodejs
+    state: present    
+- name: npm
+  ansible.builtin.package:
+    name: install npm
+    state: present      
